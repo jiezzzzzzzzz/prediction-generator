@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Random!</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+  background-color: steelblue;
+}
+
+h1 {
+    color: black;
+    margin-left: 0px;
+}
+h2 {
+  color: black;
+  margin-left: 0px;
+}
+button {
+  margin-left: 400px;
+    }
+.content {
+    max-width: 500px;
+    margin: auto;
+}
+    </style>
+</head>
+
+<body>
+<div class="content">
+<script type="text/javascript">
+    function generation() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                console.log(xhr.response)
+                document.getElementById('generator').innerHTML = xhr.responseText
+            }
+        }
+        xhr.open('get', 'http://127.0.0.1:5000/generator', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+        xhr.send();
+    }
+
+</script>
+<style>
+    .button_class {
+    display: inline-block !important;
+    text-decoration: none !important;
+    background-color: #eaeaea !important;
+    color: #04080f !important;
+    border: 3px solid #28728f !important;
+    border-radius: 52px !important;
+    font-size: 20px !important;
+    padding: 6px 100px !important;  !important;
+}
+.button_class:hover{
+    text-decoration: none !important;
+
+}
+</style>
+    <h1>Хочешь знать, что тебя ждет сегодня, завтра, через неделю или даже после смерти?</h1>
+    <h1>Наша персональная гадалка готова дать ответ на этот вопрос!</h1>
+    <h2 id="generator"></h2>
+    <input type="submit" class="button_class" value="тык" onclick="generation()">
+</div>
+</body>
+</html>
