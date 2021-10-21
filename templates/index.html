@@ -38,7 +38,7 @@ button {
                 document.getElementById('generator').innerHTML = xhr.responseText
             }
         }
-        xhr.open('get', 'http://127.0.0.1:5000/generator', true);
+        xhr.open('get', 'https://future-prediction-generator.herokuapp.com/generator', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
         xhr.send();
     }
